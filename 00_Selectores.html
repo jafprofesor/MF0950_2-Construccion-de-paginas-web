@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Selectores en CSS</title>
+    <style>
+        /* Selector universal */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Selector de etiqueta */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        /* Selector de clase */
+        .destacado {
+            background-color: yellow;
+            font-weight: bold;
+            padding: 15px;
+        }
+
+        /* Selector de ID */
+        #especial {
+            color: white;
+            background-color: #007BFF;
+            padding: 10px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        /* Selector de atributo */
+        a[href^="https://"] {
+            color: green;
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        /* Selector descendente */
+        div p {
+            color: #f44;
+        }
+
+        /* Selector hijo directo */
+        ul > li {
+            list-style-type: square;
+            margin-left: 120px;
+        }
+
+        /* Selector de pseudo-clase */
+        a:hover {
+            color: red;
+        }
+
+        /* Selector de pseudo-elemento */
+        p::first-line {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Selectores en CSS</h1>
+    <p>Esta es una introducción a los diferentes <span class="destacado">selectores</span> en CSS.</p>
+    <p id="especial">Este párrafo tiene un ID único.</p>
+
+    <div>
+        <p>Un párrafo dentro de un div.</p>
+    </div>
+
+    <ul>
+        <li>Elemento de lista 1</li>
+        <li>Elemento de lista 2</li>
+    </ul>
+
+    <a href="https://example.com">Enlace externo</a>
+    <br>
+    <a href="mailto:contacto@example.com">Enlace de correo</a>
+</body>
+</html>
