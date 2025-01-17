@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio display: inline-block</title>
+    <style>
+        .container {
+  text-align: center; /* Centrar los elementos horizontales */
+  font-size: 0; /* Elimina el espacio en blanco entre elementos inline-block */
+}
+
+.box {
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+  font-size: 14px;
+  text-align: left;
+}
+
+.image {
+  display: inline-block;
+  width: 50px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.text {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+
+    </style>
+</head>
+<body>
+    <h2>Ejemplo de display: inline-block</h2>
+    <div class="container">
+      <div class="box">
+        <img src="../robot.png" alt="Imagen 1" class="image">
+        <p class="text">Texto 1</p>
+      </div>
+      <div class="box">
+        <img src="../robot.png" alt="Imagen 2" class="image">
+        <p class="text">Texto 2</p>
+      </div>
+      <div class="box">
+        <img src="../robot.png" alt="Imagen 3" class="image">
+        <p class="text">Texto 3</p>
+      </div>
+    </div>
+
+</body>
+</html>
