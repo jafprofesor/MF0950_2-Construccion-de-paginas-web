@@ -1,0 +1,75 @@
+/* Menú de navagación */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.logo:first-child{
+    margin-right: auto;
+}
+
+nav ul {
+    margin: 10;
+    padding: 10;
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Tarjetas que se ampian y se ocultan */
+/* Estilos base del contenedor */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacio entre tarjetas */
+  height: 300px; /* Altura del contenedor */
+  background-color: #f0f0f0;
+}
+
+/* Estilos base de las tarjetas */
+.card {
+  width: 100px;
+  height: 150px;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease; /* Transición suave */
+  cursor: pointer;
+  position: relative;
+}
+
+/* Efecto al pasar el cursor sobre una tarjeta */
+.card:hover {
+  transform: scale(1.5); /* Expande la tarjeta */
+  z-index: 10; /* Asegura que la tarjeta expandida esté por encima */
+}
+
+/* Oculta las demás tarjetas cuando una está en hover */
+.container:hover .card:not(:hover) {
+  opacity: 0; /* Oculta las tarjetas no hover */
+  transform: scale(0.8); /* Opcional: reduce el tamaño de las demás */
+}
+/* Terminal */
+body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+        }
+#terminal-container {
+            width: 80%;
+            height: 400px;
+            border: 1px solid white;
+            margin: 20px auto;
+        }

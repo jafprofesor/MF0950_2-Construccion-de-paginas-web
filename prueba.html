@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link href="estilosprueba.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+    </head>
+    <body>
+    <nav>
+        <img src="fruit-1222488_640.png" alt="logo" width="15%" class="logo">
+        <ul>
+            <li>uno</li>
+            <li>dos</li>
+            <li>tres</li>
+            <li>cuatro</li>
+        </ul>
+        </nav>
+        <p>el resto de la página</p>
+        <div class=container>
+            <div class="card">
+                <h2>uno</h2>
+                <p>eso es un texto</p>
+            </div>
+            <div class="card">
+                <h2>dos</h2>
+                <p>eso es un texto</p>
+            </div>
+            <div class="card">
+                <h2>tres</h2>
+                <p>eso es un texto</p>
+            </div>
+            <div class="card">
+                <h2>cuatro</h2>
+                <p>eso es un texto</p>
+            </div>
+        </div>
+        
+    <div id="terminal-container"></div>
+         <script>
+            // Selecciona todas las tarjetas dentro del contenedor
+            const cards = document.querySelectorAll('.card');
+
+            // Itera sobre cada tarjeta
+            cards.forEach(card => {
+            // Agrega un evento "mouseenter" (cuando el cursor entra en la tarjeta)
+            card.addEventListener('mouseenter', () => {
+            // Itera sobre todas las tarjetas nuevamente
+            cards.forEach(otherCard => {
+            // Si la tarjeta actual no es la tarjeta sobre la que se está haciendo hover
+                if (otherCard !== card) {
+                // Oculta la tarjeta (cambia su opacidad a 0)
+                    otherCard.style.opacity = '0';
+                    }
+                });
+            });
+
+            // Agrega un evento "mouseleave" (cuando el cursor sale de la tarjeta)
+            card.addEventListener('mouseleave', () => {
+                // Itera sobre todas las tarjetas nuevamente
+                cards.forEach(otherCard => {
+                // Muestra la tarjeta (cambia su opacidad a 1)
+                    otherCard.style.opacity = '1';
+                    });
+                });
+            });
+             
+             // JavaScript para la Terminal
+        document.addEventListener("DOMContentLoaded", function() {
+            const terminal = new Terminal({
+                cursorBlink: true,
+                rows: 20,
+                cols: 80
+            });
+            const terminalContainer = document.getElementById("terminal-container");
+            terminal.open(terminalContainer);
+
+            let command = "";
+            const prompt = "$ "; // Define el prompt de la terminal
+
+            function showPrompt() {
+                terminal.write("\r\n" + prompt);
+                command = ""; // Reinicia la línea de comandos
+            }
+
+            // Muestra un mensaje de bienvenida y el primer prompt
+            terminal.writeln("Bienvenido a la terminal web con prompt.");
+            terminal.writeln("Escribe 'help' para ver los comandos disponibles.");
+            showPrompt();
+
+            terminal.onData(e => {
+                if (e === '\r') { // Enter
+                    terminal.writeln(""); // Nueva línea
+                    processCommand(command.trim());
+                    showPrompt(); // Muestra nuevamente el prompt
+                } else if (e === '\u007F') { // Backspace
+                    if (command.length > 0) {
+                        command = command.slice(0, -1);
+                        terminal.write("\b \b");
+                    }
+                } else {
+                    command += e;
+                    terminal.write(e);
+                }
+            });
+
+            function processCommand(cmd) {
+                switch (cmd) {
+                    case "help":
+                        terminal.writeln("Comandos disponibles:");
+                        terminal.writeln(" - help  : Muestra esta ayuda");
+                        terminal.writeln(" - clear : Limpia la terminal");
+                        terminal.writeln(" - ls    : Lista archivos");
+                        terminal.writeln(" - ls -l : Lista archivos con detalles");
+                        break;
+                    case "clear":
+                        terminal.clear();
+                        showPrompt(); // Asegura que el prompt reaparezca
+                        break;
+                    case "ls":
+                        terminal.writeln("archivo1.txt  archivo2.txt  carpeta/");
+                        break;
+                    case "ls -l":
+                        terminal.writeln("total 3");
+                        terminal.writeln("-rw-r--r--  1 usuario usuario  120  feb 07  archivo1.txt");
+                        terminal.writeln("-rw-r--r--  1 usuario usuario  340  feb 06  archivo2.txt");
+                        terminal.writeln("drwxr-xr-x  2 usuario usuario  4096 feb 05  carpeta/");
+                        break;
+                    default:
+                        terminal.writeln(`Comando no reconocido: ${cmd}`);
+                }
+            }
+        });
+    </script>
+    </body>
+</html>
