@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax 5</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+    /* Sobrescribir estilos del sitio UGG */
+    #main {width: 100%; padding:0;}
+    .content-asset p {margin:0 auto;}
+    .breadcrumb {display:none;}
+
+    /* Ayudantes */
+    .margin-top-10 {padding-top:10px;}
+    .margin-bot-10 {padding-bottom:10px;}
+
+    /* Tipografía */
+    #parallax-world-of-ugg h1 {font-family:'Oswald', sans-serif; font-size:24px; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;}
+    #parallax-world-of-ugg h2 {font-family:'Oswald', sans-serif; font-size:70px; letter-spacing:10px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.9;}
+    #parallax-world-of-ugg h3 {font-family:'Oswald', sans-serif; font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;}
+    #parallax-world-of-ugg p {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:14px; line-height:24px;}
+    .first-character {font-weight:400; float: left; font-size: 84px; line-height: 64px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Source Sans Pro', sans-serif;}
+
+    .sc {color: #3b8595;}
+    .ny {color: #3d3c3a;}
+    .atw {color: #c48660;}
+
+    /* Sección - Título */
+    #parallax-world-of-ugg .title {background: white; padding: 60px; margin:0 auto; text-align:center;}
+    #parallax-world-of-ugg .title h1 {font-size:35px; letter-spacing:8px;}
+
+    /* Sección - Bloque */
+    #parallax-world-of-ugg .block {background: white; padding: 60px; width:820px; margin:0 auto; text-align:justify;}
+    #parallax-world-of-ugg .block-gray {background: #f2f2f2;padding: 60px;}
+    #parallax-world-of-ugg .section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
+
+    /* Sección - Parallax */
+    #parallax-world-of-ugg .parallax-one {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1415018255745-0ec3f7aee47b?dpr=1&auto=format&fit=crop&w=1500&h=938&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
+    #parallax-world-of-ugg .parallax-two {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1432163230927-a32e4fd5a326?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
+    #parallax-world-of-ugg .parallax-three {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1440688807730-73e4e2169fb8?dpr=1&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
+
+    /* Extras */
+    #parallax-world-of-ugg .line-break {border-bottom:1px solid black; width: 150px; margin:0 auto;}
+
+    /* Media Queries */
+    @media screen and (max-width: 959px) and (min-width: 768px) {
+      #parallax-world-of-ugg .block {padding: 40px; width:620px;}
+    }
+    @media screen and (max-width: 767px) {
+      #parallax-world-of-ugg .block {padding: 30px; width:420px;}
+      #parallax-world-of-ugg h2 {font-size:30px;}
+      #parallax-world-of-ugg .block {padding: 30px;}
+      #parallax-world-of-ugg .parallax-one, #parallax-world-of-ugg .parallax-two, #parallax-world-of-ugg .parallax-three {padding-top:100px; padding-bottom:100px;}
+    }
+    @media screen and (max-width: 479px) {
+      #parallax-world-of-ugg .block {padding: 30px 15px; width:290px;}
+    }
+    </style>
+</head>
+<body>
+
+  <div id="parallax-world-of-ugg">
+
+  <section>
+    <div class="title">
+      <h3>Hagamos algo de</h3>
+      <h1>PARALLAX</h1>
+    </div>
+  </section>
+
+  <section>
+      <div class="parallax-one">
+        <h2>SUR DE CALIFORNIA</h2>
+      </div>
+  </section>
+
+  <section>
+    <div class="block">
+      <p><span class="first-character sc">E</span>n 1978, Brian Smith aterrizó en el sur de California con una bolsa de botas de piel de oveja y esperanza. Se enamoró de la experiencia de la piel de oveja y estaba convencido de que el mundo algún día compartiría este amor. Las playas del sur de California habían sido durante mucho tiempo un epicentro de un estilo de vida relajado y casual, un estilo de vida que Brian sintió que era una combinación perfecta para su marca. Así que fundó la marca UGG, comenzó a vender sus botas de piel de oveja y fueron una sensación inmediata. A mediados de la década de 1980, la marca UGG se convirtió en un símbolo de la cultura relajada del sur de California, ganando impulso a través de tiendas de surf y otras tiendas a lo largo de la costa de California, desde San Diego hasta Santa Cruz. Las botas UGG llegaron más allá de la playa, apareciendo en grandes ciudades y pequeños pueblos de todo el país, y en todos los niveles de la sociedad. Las chicas usaban el par de botas UGG de sus novios surfistas como una chaqueta de letras. Cuando llegaba el invierno, las botas UGG estaban en las tiendas de esquí y se veían en alojamientos desde Mammoth hasta Aspen.</p>
+      <p class="line-break margin-top-10"></p>
+      <p class="margin-top-10">La marca UGG comenzó a simbolizar a aquellos que abrazaban el deporte y un estilo de vida activo y relajado. Más que eso, comenzó a crecer una conexión emocional y un verdadero sentimiento de amor por las botas UGG, tal como Brian había imaginado. A la gente no solo le gustaba usar botas UGG, se enamoraban de ellas y literalmente no podían quitárselas. A finales de los 90, las celebridades y los del mundo de la moda se dieron cuenta de la marca UGG. También ocurrió un cambio cultural: la gente se sentía empoderada al llevar un estilo de vida más casual y UGG se convirtió en uno de los símbolos de este estilo de vida. Para el año 2000, un amor que comenzó en las playas se había convertido en un icono de estilo casual. Fue en este momento que el amor por UGG creció en el este, sobre las Montañas Rocosas y en Chicago. En 2000, las botas de piel de oveja UGG fueron presentadas por primera vez en las Cosas Favoritas de Oprah® y Oprah declaró enfáticamente que "AMAAAAA sus botas UGG". A partir de ese momento, el mundo comenzó a darse cuenta.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="parallax-two">
+      <h2>NUEVA YORK</h2>
+    </div>
+  </section>
+
+  <section>
+    <div class="block">
+      <p><span class="first-character ny">R</span>omper en el mundo de la moda de Nueva York no es tarea fácil. Pero a principios de la década de 2000, UGG Australia comenzó a conquistarlo. La evolución de UGG de una marca que fabricaba botas, zapatillas, zuecos y sandalias de piel de oveja para un estilo de vida activo y al aire libre a una marca que ahora se promocionaba como símbolo de un estilo de vida elegante, casual y lujoso fue rápida. Gran parte de esto se debió a un esfuerzo de reposicionamiento de la marca que transformó a UGG en un fabricante de calzado de lujo de alta gama. Como marca de moda, los anuncios de UGG ahora adornaban las páginas de la revista Vogue, así como otras revistas de moda. A mediados de la década de 2000, el deseo de moda casual premium se extendía por todo el mundo y UGG ahora estaba perfectamente alineada con este movimiento.</p>
+      <p class="line-break margin-top-10"></p>
+      <p class="margin-top-10">Impulsada por celebridades de costa a costa usando botas y zapatillas UGG en su tiempo libre, se talló una nueva era de la moda. Como resultado, el deseo y el amor por UGG aumentaron a medida que la gente quería profundizar en esta experiencia relajada de UGG. UGG comenzó a ofrecer numerosas variaciones de color y estilo en sus botas y zapatillas de piel de oveja. Se añadieron botas de invierno para mujeres y hombres y zapatos casuales de cuero con gran éxito. Lo que comenzó como un artículo de nicho, las botas de piel de oveja UGG, ahora eran un elemento básico imprescindible en el guardarropa de todos. Siguieron más colecciones de UGG, mostrando desde botas de punto hasta zapatillas y cuñas, manteniendo siempre esa sensación lujosa por la que UGG es conocida en todo el mundo. Los productos UGG ahora se veían en pasarelas y en sesiones de fotos de moda de costa a costa. Pronto, el amor se extendió aún más.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="parallax-three">
+      <h2>BOSQUE ENCANTADO</h2>
+    </div>
+  </section>
+
+  <section>
+    <div class="block">
+      <p><span class="first-character atw">C</span>uando la comunidad de moda de Nueva York nota tu marca, el mundo pronto sigue. El amor generalizado por UGG se extendió a Europa a mediados de la década de 2000 junto con el movimiento de moda casual elegante y la demanda de moda casual premium. Las botas y zapatos UGG ahora se veían caminando por las calles de Londres, París y Ámsterdam con regularidad. Para satisfacer la creciente demanda de nuevos fans, UGG abrió tiendas insignia en el Reino Unido y una ubicación adicional en Moscú. A medida que el amor se extendía más hacia el este, se abrieron tiendas conceptuales en Pekín, Shanghái y Tokio. UGG Australia ahora es una marca internacional amada por todos. Este amor es el resultado de una combinación mágica de los increíbles beneficios funcionales de la piel de oveja y el sentimiento emocional elevado que obtienes cuando te las pones. En resumen, te sientes mejor en general cuando usas botas, zapatillas y zapatos UGG.</p>
+      <p class="line-break margin-top-10"></p>
+      <p class="margin-top-10">En 2011, UGG volverá a sus raíces y se centrará en traer de vuelta a los hombres activos que dieron vida a la marca con nuevos estilos que les permitirán amar la marca nuevamente, así como invitar a más hombres a sentir el amor que el resto del mundo conoce tan bien. UGG también dará un paso en el mundo de la alta moda con la Colección UGG. La Colección UGG fusiona el oficio atemporal de la fabricación de zapatos italianos con la magia confiable de la piel de oveja, llevando la sensación lujosa de UGG a la alta moda. A medida que el amor por UGG continúa extendiéndose por el mundo, hemos seguido ofreciendo nuevas y sorprendentes formas de experimentar la marca. El viaje de UGG continúa y el amor por UGG continúa extendiéndose.</p>
+    </div>
+  </section>
+  </div>
+
+  <script>
+    // Esperar a que el documento esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+        // Seleccionar el botón y añadir un evento de clic
+        var miBoton = document.getElementById('miBoton');
+        miBoton.addEventListener('click', function() {
+            console.log('Botón clicado');
+            // Seleccionar el elemento y aplicar un efecto de desvanecimiento
+            var miElemento = document.getElementById('miElemento');
+            miElemento.style.opacity = '0';
+            miElemento.style.transition = 'opacity 1s';
+        });
+    });
+  </script>
+</body>
+</html>

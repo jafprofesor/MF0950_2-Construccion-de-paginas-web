@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax 7</title>
+
+    <style>
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+      position: relative;
+  }
+
+  .parallax-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .parallax-caption h3 {
+      font-size: 2rem;
+      font-weight: bold;
+  }
+
+  .parallax-caption p {
+      font-size: 1.2rem;
+  }
+
+  .parallax-1 {
+      background-image: url('https://picsum.photos/id/1015/1200/800');
+  }
+
+  .parallax-2 {
+      background-image: url('https://picsum.photos/id/1019/1200/800');
+  }
+
+  .parallax-3 {
+      background-image: url('https://picsum.photos/id/1025/1200/800');
+  }
+  </style>
+
+  </head>
+  <body>
+    <div>
+      <div class="parallax parallax-1">
+        <div class="parallax-caption">
+          <h3>Imagenes de la naturaleza</h3>
+          <p>Explorar los lugares más impresionantes de la naturaleza.</p>
+        </div>
+      </div>
+
+      <div class="container py-5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna vel auctor luctus, leo nunc tincidunt
+          risus, id bibendum magna magna quis velit.</p>
+      </div>
+
+      <div class="parallax parallax-2">
+        <div class="parallax-caption">
+          <h3>Paisajes urbanos</h3>
+          <p>Descubre la energia de las ciudades modernas.</p>
+        </div>
+      </div>
+
+      <div class="container py-5">
+        <p>Nullam vel mi vel risus rutrum consequat a vel dui. Aliquam erat volutpat. Sed consectetur turpis eget metus
+          hendrerit, vel facilisis mauris venenatis.</p>
+      </div>
+
+      <div class="parallax parallax-3">
+        <div class="parallax-caption">
+          <h3>Construcciones modernas</h3>
+          <p>Maravíllese ante las asombrosas creaciones del ingenio humano.</p>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
