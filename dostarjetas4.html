@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto de Desplazamiento Centrado</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+            opacity: 0; /* Inicialmente invisibles */
+            position: absolute; /* Usamos absolute para moverlas fuera de la pantalla */
+        }
+
+        .left-card {
+            transform: translateX(-350%); /* Mover la tarjeta izquierda fuera de la pantalla */
+        }
+
+        .right-card {
+            transform: translateX(350%); /* Mover la tarjeta derecha fuera de la pantalla */
+        }
+
+        .content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card left-card">Tarjeta Izquierda</div>
+        <div class="card right-card">Tarjeta Derecha</div>
+    </div>
+    <div class="content">
+        <p>Desplázate hacia abajo para ver el efecto...</p>
+    </div>
+    <script>
+        window.addEventListener('scroll', () => {
+            const leftCard = document.querySelector('.left-card');
+            const rightCard = document.querySelector('.right-card');
+            const scrollPosition = window.scrollY;
+
+            // Ajusta este valor para controlar cuándo se activa el efecto
+            const triggerPoint = 200;
+
+            if (scrollPosition > triggerPoint) {
+                // Mover las tarjetas al centro y hacerlas visibles
+                leftCard.style.transform = 'translateX(-60%)'; /* Mover a la izquierda del centro */
+                rightCard.style.transform = 'translateX(60%)'; /* Mover a la derecha del centro */
+                leftCard.style.opacity = '1';
+                rightCard.style.opacity = '1';
+            } else {
+                // Mover las tarjetas fuera de la pantalla y hacerlas invisibles
+                leftCard.style.transform = 'translateX(-350%)';
+                rightCard.style.transform = 'translateX(350%)';
+                leftCard.style.opacity = '0';
+                rightCard.style.opacity = '0';
+            }
+        });
+    </script>
+</body>
+</html>
