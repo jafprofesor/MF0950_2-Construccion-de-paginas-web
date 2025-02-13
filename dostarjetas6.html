@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto de Desplazamiento Centrado</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px; /* Espacio entre contenedores */
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+            opacity: 0; /* Inicialmente invisibles */
+            position: absolute; /* Usamos absolute para moverlas fuera de la pantalla */
+        }
+
+        .left-card {
+            transform: translateX(-350%); /* Mover la tarjeta izquierda fuera de la pantalla */
+        }
+
+        .right-card {
+            transform: translateX(350%); /* Mover la tarjeta derecha fuera de la pantalla */
+        }
+
+        .content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+  <div class="content">
+    <p>Desplázate hacia abajo para ver el efecto...</p>
+</div>
+
+    <div class="container">
+        <div class="card left-card">Tarjeta Izquierda 1</div>
+        <div class="card right-card">Tarjeta Derecha 1</div>
+    </div>
+    <div class="container">
+        <div class="card left-card">Tarjeta Izquierda 2</div>
+        <div class="card right-card">Tarjeta Derecha 2</div>
+    </div>
+    <div class="container">
+        <div class="card left-card">Tarjeta Izquierda 3</div>
+        <div class="card right-card">Tarjeta Derecha 3</div>
+    </div>
+    <div class="content">
+        <p>Desplázate hacia abajo para ver el efecto...</p>
+    </div>
+    <script>
+        window.addEventListener('scroll', () => {
+            const containers = document.querySelectorAll('.container');
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            containers.forEach((container, index) => {
+                const leftCard = container.querySelector('.left-card');
+                const rightCard = container.querySelector('.right-card');
+
+                /*Esta línea de código calcula el punto de activación (`triggerPoint`) para cada contenedor `.container`. Este punto determina cuándo las tarjetas dentro del contenedor  deben comenzar a moverse hacia el centro y hacerse visibles. 'container.offsetTop`: Obtiene la distancia en píxeles desde la parte superior del documento hasta la parte superior del contenedor. Es decir, la posición vertical del contenedor en la página. `container.offsetHeight`: Obtiene la altura del contenedor en píxeles. `container.offsetHeight / 2`: Divide la altura del contenedor por 2, obteniendo así la mitad de la altura del contenedor. Sumando `container.offsetTop` y `container.offsetHeight / 2`, obtenemos el punto medio vertical del contenedor en relación con la parte superior del documento. Este valor se usa como el `triggerPoint`, que es el punto en el que, cuando el scroll alcanza o supera este valor, las tarjetas dentro del contenedor se moverán hacia el centro y se harán visibles.*/
+                const triggerPoint = container.offsetTop + container.offsetHeight / 2;
+
+                if (scrollPosition > triggerPoint) {
+                    // Mover las tarjetas al centro y hacerlas visibles
+                    leftCard.style.transform = 'translateX(-60%)'; /* Mover a la izquierda del centro */
+                    rightCard.style.transform = 'translateX(60%)'; /* Mover a la derecha del centro */
+                    leftCard.style.opacity = '1';
+                    rightCard.style.opacity = '1';
+                } else {
+                    // Mover las tarjetas fuera de la pantalla y hacerlas invisibles
+                    leftCard.style.transform = 'translateX(-350%)';
+                    rightCard.style.transform = 'translateX(350%)';
+                    leftCard.style.opacity = '0';
+                    rightCard.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
